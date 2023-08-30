@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Web Title & Icon -->
+    <title>Pokemon</title>
+    <link href="assets/img/poke-ball.png" rel="icon">
+
+    <!-- Link local CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--Chart.js JS CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.min.js"
+        integrity="sha512-mlz/Fs1VtBou2TrUkGzX4VoGvybkD9nkeXWJm3rle0DPHssYYx4j+8kIS15T78ttGfmOjH0lLaBXGcShaVkdkg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header id="header" class="fixed-top ">
+        <div class="container d-flex align-items-center justify-content-lg-between">
+            <h1 class="logo me-auto me-lg-0">
+                <a href="index.html" style="text-decoration: none;">
+                    <img src="assets/img/poke-ball.png" alt="poke-ball">
+                    Pokemon<span>.</span>
+                </a>
+            </h1>
+            <!-- NAVBAR -->
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#cta">Find a Pokemon</a></li>
+                    <li><a class="nav-link scrollto" href="https://pokeapi.co/">About API</a></li>
+                    <li><a class="nav-link scrollto" href="#footer">About Site</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+        </div>
+    </header>
+    <!-- END HEADER -->
+    <!-- SECTION HERO -->
+    <section id="hero" class="d-flex align-items-center justify-content-center">
+        <div class="container" data-aos="fade-up">
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+                <div class="col-xl-6 bg-secondary bg-opacity-50 rounded-3">
+                    <h1>Pokemon Database<span>.</span></h1>
+                    <h2>This website shows Pokemon information and details from Pokemon API</h2>
+                    <a href="#cta">
+                        <button type="button" class="btn btn-primary m-3 rounded-5">Show Pokemons</button>
+                    </a>
+                </div>
+                <div id="hero-img" class="col-xl-6">
+                    <img src="assets/img/poke-title.png" class="w-75 h-60">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END SECTION HERO -->
+    <!-- MAIN CONTENT -->
+    <main id="main">
+        <!-- SECTION CTA -->
+        <section id="cta" class="cta">
+            <div class="container" data-aos="zoom-in">
+                <div class="text-center" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <img src="assets/img/poke-title.png" alt="poke-title" class="w-25 h-25">
+                    <h3>List of available Pokemons</h3>
+                    <div id="listPK" class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+                        <!-- Pokemon list using AJAX -->
+                    </div>
+                    <button type="button" id="btn" class="btn btn-light m-3 rounded-5"><a href="#hero">Back to Top</a>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- END SECTION CTA -->
+        <!-- MODAL -->
+        <div class="modal fade col-1" id="detailPK" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content col-12">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Pokemon Details</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                    <div class="modal-body" id="modalPK">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END MODAL -->
+    </main>
+    <!-- END MAIN -->
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-info">
+                        <h3><img src="assets/img/poke-ball.png" style="width: 35px; height: 35px;">
+                            Pokemon<span>.</span></h3>
+                        <p>Pokémon is a media franchise owned by the video game company Nintendo and created by Satoshi
+                            Tajiri in 1995.</p>
+                        <br>
+                        <p>© 2023 Pokémon. © 1995&minus;2023 Nintendo/Creatures Inc./GAME FREAK inc. All Rights
+                            Reserved.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <h4>About this site</h4>
+                        <ul>
+                            <li><a href="https://www.pokemon.com/us" target="_blank"
+                                    rel="noopener noreferrer">Pokemon</a></li>
+                            <li><a href="https://pokeapi.co/" target="_blank" rel="noopener noreferrer">Pokemon API</a>
+                            </li>
+                            <li><a href="http://" target="_blank" rel="noopener noreferrer">Site Developer</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-disclaimer">
+                        <h4>Disclaimer!</h4>
+                        <p>This site is a fake site of Pokemon List that were made as a Course Projects, this site
+                            weren’t affiliate with Pokemon, not taking any commercial profit and for educational purpose
+                            only.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
